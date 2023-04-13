@@ -1,0 +1,13 @@
+Given a word or a sentense I am required to replace every letter in the word with its equivalent number in the alphabet.
+if any of the letters of the word or sentense is not a letter remove it and do not return its
+
+- Input is going to be either a word or a sentence.
+- Output every letter of the alphabet is to be replaced by a number.
+- How to do it?
+- Algorithm
+- First I will get the inputted string from the user.
+- Then i am going to define a place where i will put my converted number
+- I will loop through each character and convert into to capital
+- Then i will obtain its character code equivalent
+- Then i will subtract 64 from every character code before I put into to our final array.
+- Then i will join every those characters.
