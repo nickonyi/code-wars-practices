@@ -23,3 +23,104 @@ function validatePIN(pin) {
     return false;
 }
 //function descending order
+function descendingOrder(n) {
+    //...
+    if (n < 0) {
+        throw new Error("Input must be a non-negative integer.");
+    }
+    let digits = n.toString().split('');
+    let sortedDigits = digits.sort((a, b) => {
+        return b - a;
+    });
+    let sortedNumber = parseInt(sortedDigits.join(""), 10);
+    return sortedNumber;
+
+
+}
+
+function paperwork(n, m) {
+    if (n < 0 || m < 0) {
+        return 0;
+    } else {
+        return n * m;
+    }
+}
+
+function setAlarm(employed, vacation) {
+    if (employed == true && !vacation) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function evenOrOdd(number) {
+    if (number % 2 == 0) {
+        return "even";
+    } else {
+        return "odd";
+    }
+}
+
+function getGrade(s1, s2, s3) {
+    // Code here
+    const score = (s1 + s2 + s3) / 3;
+
+    if (score >= 90 && score <= 100) {
+        return "A";
+    } else if (score >= 80 && score < 90) {
+        return "B";
+    } else if (score >= 70 && score < 80) {
+        return "C";
+    } else if (score >= 60 && score < 70) {
+        return "D";
+    }
+}
+
+
+//function towerBuilder(nFloors) {
+//    let tower = [];
+//    let maxWidth = 2 * nFloors - 1;
+//    for (let i = 0; i < nFloors; i++) {
+//        let spaces = " ".repeat(nFloors - i - 1);
+//        let blocks = "*".repeat(2 * nFloors + 1);
+//        let floor = spaces + blocks + spaces;
+//        tower.push(floor);
+//    }
+//    return tower;
+//}
+//
+//var numFloors = 3;
+//var tower = buildTower(numFloors);
+//console.log(tower);
+//
+//function buildTower(floors) {
+//    var tower = [];
+//
+//    for (var i = 0; i < floors; i++) {
+//        var spaces = " ".repeat(floors - i - 1);
+//        var blocks = "*".repeat(2 * i + 1);
+//        var floor = spaces + blocks + spaces;
+//        tower.push(floor);
+//    }
+//
+//    return tower;
+//}
+//
+//// Example usage
+//var numFloors = 3;
+//var tower = buildTower(numFloors);
+//console.log(tower);
+
+
+function towerBuilder(nFloors) {
+    let tower = [];
+
+    for (let i = 0; i < nFloors; i++) {
+        let spaces = " ".repeat(nFloors - i - 1);
+        let blocks = "*".repeat(2 * i + 1);
+        let floor = spaces + blocks + spaces;
+        tower.push(floor);
+    }
+    return tower;
+}
