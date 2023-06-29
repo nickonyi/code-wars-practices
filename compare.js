@@ -124,3 +124,35 @@ function towerBuilder(nFloors) {
     }
     return tower;
 }
+
+
+//return the total number of smiling faces in the array
+function countSmileys(arr) {
+    let validEyes = [':', ';'];
+    let validNose = ['-', '~'];
+    let validMouth = [')', 'D'];
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        const face = arr[i];
+        if (face.length === 2 && validEyes.includes(face[0]) && validMouth.includes(face[1]) ||
+            face.length === 3 && validEyes.includes(face[0]) && validNose.includes(face[1]) && validMouth.includes(face[2])
+        ) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function openOrSenior(data) {
+    let output = [];
+    for (let i = 0; i < data.length; i++) {
+        const [age, handicap] = data[i];
+        if (age >= 55 && handicap > 7) {
+            output.push('senior');
+        } else {
+            output.push('open');
+        }
+    }
+    return output;
+}
