@@ -156,3 +156,25 @@ function openOrSenior(data) {
     }
     return output;
 }
+
+function greet(name, owner) {
+    // Add code here
+    if (name === owner) {
+        return "Hello boss";
+    } else {
+        return "Hello guest";
+    }
+}
+
+function order(words) {
+    // ...
+    let splitWords = words.split(" ");
+    splitWords.sort((a, b) => {
+        let numA = parseInt(a.match(/\d+/)[0]);
+        let numB = parseInt(b.match(/\d+/)[0]);
+
+        return numA - numB;
+    });
+    const joinWords = splitWords.join(" ");
+    return joinWords;
+}
