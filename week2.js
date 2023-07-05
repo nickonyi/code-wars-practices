@@ -45,3 +45,28 @@ function bouncingBall(h, bounce, window) {
     }
     return count;
 }
+
+function accum(s) {
+    // your code
+    let result = [];
+    for (let i = 0; i < s.length; i++) {
+        const repeatedChar = s[i].repeat(i + 1);
+        const modifiedChar = repeatedChar.charAt(0).toUpperCase() + repeatedChar.slice(1).toLowerCase();
+
+        result.push(modifiedChar);
+    }
+    const finalResult = result.join('-');
+
+    return finalResult;
+}
+
+
+function removeChar(str) {
+    //You got this!
+    if (str < 2) {
+        return "";
+    }
+
+    const result = str.substring(1, str.length - 1);
+    return result;
+};
