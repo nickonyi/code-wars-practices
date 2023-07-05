@@ -70,3 +70,8 @@ function removeChar(str) {
     const result = str.substring(1, str.length - 1);
     return result;
 };
+
+function arrayDiff(a, b) {
+    const filterArray = a.filter(item => !b.includes(item));
+    return filterArray;
+}
