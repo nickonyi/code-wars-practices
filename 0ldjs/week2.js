@@ -75,3 +75,59 @@ function arrayDiff(a, b) {
     const filterArray = a.filter(item => !b.includes(item));
     return filterArray;
 }
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    // TODO
+    let maximumDistance = mpg * fuelLeft;
+
+    if (maximumDistance >= distanceToPump) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function feast(beast, dish) {
+
+    if (beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]) {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function digPow(n, p) {
+    // ...
+    let numberString = n.toString();
+    let numberArray = numberString.split('').map(Number);
+
+    let sumNumber = 0;
+    for (let i = 0; i < numberArray.length; i++) {
+        sumNumber += numberArray[i] ** p;
+        p++;
+    }
+
+
+
+    for (let k = 1; k <= sumNumber / n; k++) {
+
+        if (n * k === sumNumber) {
+            return k;
+        }
+    }
+
+    return -1;
+}
+
+
+function longestConsec(strarr, k) {
+    // your code
+    console.log(strarr);
+    //const stringAttach = [];
+    //for (let i = 0; i < strarr.length - 1; i = +2) {
+    //    stringAttach.push(strarr[i] + strarr[i + 1]);
+    //
+    //}
+    //return stringAttach;
+}
