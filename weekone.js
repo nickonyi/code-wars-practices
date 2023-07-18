@@ -20,3 +20,15 @@ function DNAStrand(dna) {
     const joinedStrand = complementStrand.join("");
     return joinedStrand;
 }
+
+function queueTime(customers, n) {
+    //TODO
+    const tills = Array(n).fill(0);
+    for (let customer of customers) {
+        const shortestTillIndex = tills.indexOf(Math.min(...tills));
+        tills[shortestTillIndex] += customer;
+    }
+    const totalCheckOutTime = Math.max(...tills);
+
+    return totalCheckOutTime;
+}
