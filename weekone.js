@@ -77,3 +77,44 @@ function findNeedle(haystack) {
     //return index of the value
     //return message got the value plus the index
 }
+
+
+function stringToArray(string) {
+
+    // code code code
+    return string.split(" ");
+
+}
+
+function sumTwoSmallestNumbers(numbers) {
+    //Code here
+    //initialize a sum variable
+    let sum = 0;
+    //sort the array in assending order
+    numbers.sort((a, b) => a - b);
+    //take the two first values
+    const lowestValue1 = numbers[0];
+    const lowestValue2 = numbers[1];
+    //add the values together
+    sum = lowestValue1 + lowestValue2;
+    //return the result
+    return sum;
+}
+
+function fakeBin(x) {
+    //create an empty array to put the digits
+    const fakeBinArray = [];
+    //loop over the array of string 
+    for (let i = 0; i < x.length; i++) {
+        //check if it is below 4 replace it with 0 and if it is 5 and above replace it with 5
+        if (x[i] >= 5) {
+            const element = x[i] = 1;
+            fakeBinArray.push(element);
+        } else {
+            const element = x[i] = 0;
+            fakeBinArray.push(element)
+        }
+    }
+    return fakeBinArray.join('');
+
+}
