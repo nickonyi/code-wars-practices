@@ -118,3 +118,30 @@ function fakeBin(x) {
     return fakeBinArray.join('');
 
 }
+
+function century(year) {
+    // Finish this :)
+    const century = Math.ceil(year / 100);
+    return century;
+}
+
+function findOdd(A) {
+    //happy coding!
+    //I will loop through the array and count the instances of each number
+    const countObj = {};
+
+    for (const element of A) {
+        if (countObj[element]) {
+            countObj[element]++;
+        } else {
+            countObj[element] = 1;
+        }
+    }
+
+
+    for (const item in countObj) {
+        if (countObj[item] % 2 == 1) {
+            return Number(item);
+        }
+    }
+}
