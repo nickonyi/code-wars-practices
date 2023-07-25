@@ -36,3 +36,22 @@ function greet(language) {
     }
     return "Your function should have returned 'Welcome'. Try again.";
 }
+
+function rot13(message) {
+    //helper function to apply rot 13 cypher to a single character
+    function rotateString(char) {
+        const code = char.charCodeAt(0);
+        //check if the character is uppercase or lowercase
+        if (code >= 65 && code <= 90 || code >= 97 && code <= 122) {
+            //Determine the base ascii code
+            const base = code >= 97 ? 97 : 65;
+            //Perform the rot 13 and make sure it wraps around each character
+            return String.fromCharCode((code - base + 13) % 26 + base);
+        }
+        //return the character as it is if not a letter
+        return char;
+    }
+
+    //Use the helper function to cypher each character in the string
+    return message.split("").map(rotateString).join("");
+}
