@@ -55,3 +55,24 @@ function rot13(message) {
     //Use the helper function to cypher each character in the string
     return message.split("").map(rotateString).join("");
 }
+
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+    // code goes here
+    return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+}
+
+function abbrevName(name) {
+
+    // code away
+    //get the two names separately
+    const [first, last] = name.split(" ");
+    //get the first letters from the first and last name and capitalize them
+    const firstN = first[0].toUpperCase();
+    const lastN = last[0].toUpperCase();
+
+
+    //return the abbrevited form
+    return firstN + "." + lastN;
+
+
+}
