@@ -94,3 +94,46 @@ function likes(names) {
         return `${names[0]}, ${names[1]} and ${count} others likes this`;
     }
 }
+
+
+const triangle = [
+    [1],
+    [3, 5],
+    [7, 9, 11],
+    [13, 15, 17, 19],
+    [21, 23, 25, 27, 29]
+];
+
+function rowSumOddNumbers(n) {
+    // TODO
+    return n * (n ** 2);
+}
+
+
+function sumOfNthRow(n) {
+    return n * (n ** 2);
+}
+
+
+function isTriangle(a, b, c) {
+    if (a + b > c && b + c > a && a + c > b) {
+        return true;
+    }
+    return false;
+}
+
+function correct(string) {
+    // your code here
+    //looop over the array
+    //replace the characters with the correct character
+    return string.split("").map(char => {
+        if (char == 5) {
+            return char.replace('5', 'S');
+        } else if (char == 0) {
+            return char.replace('0', 'O');
+        } else if (char == 1) {
+            return char.replace('1', 'I');
+        }
+        return char;
+    }).join("");
+}
