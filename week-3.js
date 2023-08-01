@@ -32,3 +32,19 @@ const a = [-2, -3, 4, -1, -2, 1, 5, -3];
 const b = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 const c = [-2, -1, -3, -4, -1, -2, -1, -5, -4];
 console.log(maxSequence(c));
+
+function rentalCarCost(d) {
+    // Your solution here
+    //if you rent 7 or more days you get $50 of yout total
+    if (d >= 7) {
+        return (d * 40) - 50;
+        //if you rent 3 or more days you get $20 of your total
+    } else if (d >= 3) {
+        return (d * 40) - 20;
+        //every day is $40 dollars
+    } else {
+        return d * 40;
+    }
+
+
+}
