@@ -45,7 +45,7 @@ function rentalCarCost(d) {
     } else {
         return d * 40;
     }
-    a
+
 
 
 }
