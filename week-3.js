@@ -31,7 +31,7 @@ var maxSequence = function(arr) {
 const a = [-2, -3, 4, -1, -2, 1, 5, -3];
 const b = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 const c = [-2, -1, -3, -4, -1, -2, -1, -5, -4];
-console.log(maxSequence(c));
+
 
 function rentalCarCost(d) {
     // Your solution here
@@ -82,4 +82,40 @@ function squareDigits(num) {
     const joinNums = squareNums.join("");
     //convert the string of numbers back to numbers
     return Number(joinNums, 10);
+}
+
+
+function DNAtoRNA(dna) {
+    // create a function which returns an RNA sequence from the given DNA sequence
+
+    //loop over every dna letter and replace it with RNA
+    //push the replaced letter to my empty array
+    //return the array
+    return dna.split("").map(nab => {
+        if (nab === "T") {
+            return "U";
+        }
+        return nab;
+    }).join("");
+}
+
+function sumMix(x) {
+    //create a sum array
+
+    let sum = [];
+    let newN;
+    // //loop through the array
+    //for any number that is not a number connvert it into a number
+    for (let i = 0; i < x.length; i++) {
+        if (typeof x[i] != "number") {
+            newN = Number(x[i]);
+            sum.push(newN);
+        } else {
+            sum.push(x[i]);
+        }
+
+    }
+    //do the addition
+    return sum.reduce((prev, curr) => prev + curr, 0);
+    //return the sum
 }
