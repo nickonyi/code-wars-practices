@@ -119,3 +119,46 @@ function sumMix(x) {
     return sum.reduce((prev, curr) => prev + curr, 0);
     //return the sum
 }
+
+
+function isValidWalk(walk) {
+    //insert brilliant code here
+    //check the length of an array if it is equal to ten items
+    if (walk.length != 10) {
+        return false;
+    }
+
+    let x = 0;
+    let y = 0;
+
+    for (let i = 0; i < walk.length; i++) {
+        switch (walk[i]) {
+            case 'n':
+                y++;
+                break;
+            case 's':
+                y--;
+                break;
+            case 'e':
+                x++;
+                break;
+            case 'w':
+                x--;
+                break;
+
+            default:
+                return false;
+        }
+
+    }
+
+    return x == 0 && y == 0
+}
+
+function count(string) {
+    // TODO
+    return string.split('').reduce((obj, item) => {
+        obj[item] = (obj[item] || 0) + 1;
+        return obj;
+    }, {});
+}
