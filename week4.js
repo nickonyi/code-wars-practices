@@ -107,3 +107,95 @@ function nbDig(n, d) {
 
     return count;
 }
+
+const rps = (p1, p2) => {
+    if (p1 === "scissors" && p2 === "paper") {
+        return "Player 1 won!";
+    } else if (p1 === "rock" && p2 === "scissors") {
+        return "Player 1 won!";
+    } else if (p1 === "paper" && p2 === "rock") {
+        return "Player 1 won!";
+    }
+
+    if (p1 === "scissors" && p2 === "rock") {
+        return "Player 2 won!";
+    } else if (p1 === "rock" && p2 === "paper") {
+        return "Player 2 won!";
+    } else if (p1 === "paper" && p2 === "scissors") {
+        return "Player 2 won!";
+    }
+
+    if (p1 === "scissors" && p2 === "scissors") {
+        return "Draw!"
+    } else if (p1 === "rock" && p2 === "rock") {
+        return "Draw!"
+    } else if (p1 === "paper" && p2 === "paper") {
+        return "Draw!";
+    }
+};
+
+function duplicateCount(text) {
+    //create a frequency object
+    const frequencyMap = {};
+    const duplicates = [];
+    const correctText = text.toLowerCase();
+
+    //count the frequency of characters
+    for (const char of correctText) {
+        if (frequencyMap[char]) {
+            frequencyMap[char]++;
+        } else {
+            frequencyMap[char] = 1;
+        }
+    }
+    //collect characters that apppear more than once
+    for (const char in frequencyMap) {
+        if (frequencyMap[char] > 1) {
+            duplicates.push(char)
+        }
+    }
+
+    const duplicateCount = duplicates.length;
+    return duplicateCount;
+}
+//Exes and Ohs
+function XO(str) {
+    //code here
+    //count the instances of x and 0
+    const obj = {};
+    const strArr = str.toLowerCase();
+    for (const char of strArr) {
+        if (obj[char]) {
+            obj[char]++;
+        } else {
+            obj[char] = 1;
+        }
+    }
+    //check if  X and O are equal
+    if (obj.x == obj.o) {
+        return true;
+    }
+    return false;
+}
+//Persistence Burger
+//The task is to write a fucntion called persisntence
+//which takes a positive interger as input which is more than single digit then
+//I multiply the individual numbers in the double digit until I arrive to a single digit
+//then I count the number of times I have multiplied until I arrived to a single digit
+function persistence(num) {
+    //code me
+    //Turn the input into an array of individual numbers
+    const numArr = String(num);
+    let multiply = 1;
+    //if the array has only one digit no need for further multiplication
+    if (numArr.length === 1) {
+        return 0;
+    }
+    for (let i = 0; i < numArr.length; i++) {
+        //convet the number before multiplying
+        multiply *= Number(numArr[i]);
+    }
+
+    //return the result of the count
+    return 1 + persistence(multiply);
+}
