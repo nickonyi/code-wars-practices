@@ -36,3 +36,16 @@ function betterThanAverage(classPoints, yourPoints) {
     }
     return false;
 }
+
+//write a function that reaturns both the smallest and 
+//largest number of an array
+function minMax(arr){
+  return [Math.min(...arr),Math.max(...arr)]; // fix me!
+}
+
+//Write a function that given a string it concatenates all odd numbers and all index numbers
+//and also given a number it should repeat n times
+function encrypt(text, n) {
+const oddIndex = "";
+const evenIndex = "";
+}
