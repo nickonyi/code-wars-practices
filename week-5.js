@@ -36,3 +36,27 @@ function betterThanAverage(classPoints, yourPoints) {
     }
     return false;
 }
+
+//double every item in the array
+function maps(x) {
+    const doubleArr = [];
+    for (let i = 0; i < x.length; i++) {
+        doubleArr.push(x[i] * 2);
+    }
+    return doubleArr;
+}
+
+//Given an array with three numbers I should return the index of the
+//number that falls between the other two numbers
+function gimme(triplet) {
+    let index = 0;
+    let min = Math.min(...triplet);
+    let max = Math.max(...triplet);
+    for (let i = 0; i < triplet.length; i++) {
+        if (triplet[i] !== max && triplet[i] !== min) {
+            index = i;
+        }
+
+    }
+    return index;
+}
