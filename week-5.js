@@ -45,7 +45,25 @@ function minMax(arr){
 
 //Write a function that given a string it concatenates all odd numbers and all index numbers
 //and also given a number it should repeat n times
+
+function groupAndJoin(arr){
+    const oddIndeces = [];
+    const evenIndeces = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (i%2 == 0) {
+            evenIndeces.push(arr[i]);
+        } else {
+            oddIndeces.push(arr[i]);
+        }
+    }
+    const fullText = oddIndeces.concat(evenIndeces);
+return fullText.join('');
+}
 function encrypt(text, n) {
-const oddIndex = "";
-const evenIndex = "";
+let result = text;
+for (let i = 0; i < n; i++) {
+    result = groupAndJoin(result);
+}
+return result;
 }
