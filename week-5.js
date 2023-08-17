@@ -46,24 +46,49 @@ function minMax(arr){
 //Write a function that given a string it concatenates all odd numbers and all index numbers
 //and also given a number it should repeat n times
 
-function groupAndJoin(arr){
-    const oddIndeces = [];
-    const evenIndeces = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i%2 == 0) {
-            evenIndeces.push(arr[i]);
-        } else {
-            oddIndeces.push(arr[i]);
-        }
+function encrypt(text,n){
+    if(!text || n<=0) return text;
+    while (n>0) {
+    let answer = '';
+    for (let i = 1; i < text.length; i+=2) {
+        answer+= text[i];   
     }
-    const fullText = oddIndeces.concat(evenIndeces);
-return fullText.join('');
+    for (let i = 0; i < text.length; i+=2) {
+        answer+=text[i];
+    }
+    text = answer;
+    n--;
 }
-function encrypt(text, n) {
-let result = text;
-for (let i = 0; i < n; i++) {
-    result = groupAndJoin(result);
+
+return text;
 }
-return result;
+
+function decrypt(encryptedText,n) {
+    if(!encryptedText || n<=0) return encryptedText;
+
+    const answer = new Array(encryptedText.length);
+
+    while (n > 0) {
+        let j = 0;
+        for (let i = 1; i < encryptedText.length; i+=2) {
+            answer[i] = encryptedText[j++];
+        }
+        for (let i = 0; i < encryptedText.length; i+=2) {
+            answer[i] = encryptedText[j++];
+            
+        }
+        encryptedText = answer.join('');
+        n--;
+    }
+    return encryptedText;
 }
+
+
+
+
+
+
+    
+
+
