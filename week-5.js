@@ -84,6 +84,33 @@ function decrypt(encryptedText,n) {
     return encryptedText;
 }
 
+//Create a tribonacci function that given an array which contains
+//a pattern of 3 elements is going to give the tribonacci sequence upto the nth element
+function tribonacci(signature,n){
+    //your code here
+    if(n === 0){
+        return [];
+    }
+    if(n === 1){
+        return [1];
+    }
+    for (let i = 3; i <= n; i++) {
+        signature[i] = signature[i-1]+signature[i-2]+signature[i-3];
+    }
+
+    return signature;
+  }
+
+  //refactored tribonacci
+  function tribonacciI(signature,n){
+    for (let i = 0; i < n-3; i++) {
+        signature.push(signature[i]+signature[i+2]+signature[i+3]);
+    }
+
+    return signature.slice(0,n);
+  }
+  
+
 
 
 
