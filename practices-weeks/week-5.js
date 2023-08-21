@@ -37,125 +37,85 @@ function betterThanAverage(classPoints, yourPoints) {
     return false;
 }
 
-//double every item in the array
-function maps(x) {
-    const doubleArr = [];
-    for (let i = 0; i < x.length; i++) {
-        doubleArr.push(x[i] * 2);
-    }
-    return doubleArr;
-}
-
-//Given an array with three numbers I should return the index of the
-//number that falls between the other two numbers
-function gimme(triplet) {
-    let index = 0;
-    let min = Math.min(...triplet);
-    let max = Math.max(...triplet);
-    for (let i = 0; i < triplet.length; i++) {
-        if (triplet[i] !== max && triplet[i] !== min) {
-            index = i;
-        }
-
-    }
-    return index;
-}
 //write a function that reaturns both the smallest and 
 //largest number of an array
-function minMax(arr) {
-    return [Math.min(...arr), Math.max(...arr)]; // fix me!
+function minMax(arr){
+  return [Math.min(...arr),Math.max(...arr)]; // fix me!
 }
 
 //Write a function that given a string it concatenates all odd numbers and all index numbers
 //and also given a number it should repeat n times
 
-function groupAndJoin(arr) {
-    const oddIndeces = [];
-    const evenIndeces = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i % 2 == 0) {
-            evenIndeces.push(arr[i]);
-        } else {
-            oddIndeces.push(arr[i]);
+function encrypt(text,n){
+    if(!text || n<=0) return text;
+    while (n>0) {
+    let answer = '';
+    for (let i = 1; i < text.length; i+=2) {
+        answer+= text[i];   
+    }
+    for (let i = 0; i < text.length; i+=2) {
+        answer+=text[i];
+    }
+    text = answer;
+    n--;
+}
+
+return text;
+}
+
+function decrypt(encryptedText,n) {
+    if(!encryptedText || n<=0) return encryptedText;
+
+    const answer = new Array(encryptedText.length);
+
+    while (n > 0) {
+        let j = 0;
+        for (let i = 1; i < encryptedText.length; i+=2) {
+            answer[i] = encryptedText[j++];
         }
-    }
-    const fullText = oddIndeces.concat(evenIndeces);
-    return fullText.join('');
-}
-
-function encrypt(text, n) {
-    let result = text;
-    for (let i = 0; i < n; i++) {
-        result = groupAndJoin(result);
-    }
-    return result;
-}
-
-function reverseGroupAndJoin(arr) {
-    const joinedArray = [];
-
-    // Join even and odd indices
-    for (let i = 0; i < arr.length / 2; i++) {
-        joinedArray.push(arr[i + Math.ceil(arr.length / 2)]);
-        joinedArray.push(arr[i]);
-    }
-
-    return joinedArray.join("");
-}
-
-function decrypt(encryptedText, n) {
-    let result = encryptedText;
-    for (let i = 0; i < n; i++) {
-        result = reverseGroupAndJoin(result);
-    }
-    return result;
-}
-
-function reverseCharactersInGroups(inputString) {
-    const arr = inputString.split('');
-
-    for (let i = 0; i < arr.length; i += 4) {
-        const endIndex = Math.min(i + 2, arr.length);
-        const group = arr.slice(i, endIndex);
-        group.reverse();
-
-        for (let j = 0; j < group.length; j++) {
-            arr[i + j] = group[j];
+        for (let i = 0; i < encryptedText.length; i+=2) {
+            answer[i] = encryptedText[j++];
+            
         }
+        encryptedText = answer.join('');
+        n--;
     }
-
-    return arr.join('');
-}
-const text = '012345';
-const encrypted = encrypt(text, 2);
-console.log(encrypt(text, 2));
-console.log(decrypt(encrypted, 2));
-
-
-function sumArray(array) {
-    if (array === undefined || array === null || array.length <= 1) {
-        return 0;
-    }
-
-
-    const min = Math.min(...array);
-    const max = Math.max(...array);
-
-    const sum = array.reduce((a, b) => a + b, 0);
-
-    return sum - (min + max);
+    return encryptedText;
 }
 
-//Given a number of petals my goal is to determine what is going to be said last
-function howMuchILoveYou(nbPetals) {
-    // your code
-    //Array to hold the phrases to be said
-    const phrases = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
-
-    if (nbPetals > phrases.length) {
-        const index = (nbPetals - 1) % phrases.length;
-        return phrases[index];
+//Create a tribonacci function that given an array which contains
+//a pattern of 3 elements is going to give the tribonacci sequence upto the nth element
+function tribonacci(signature,n){
+    //your code here
+    if(n === 0){
+        return [];
     }
-    return phrases[nbPetals - 1]
-}
+    if(n === 1){
+        return [1];
+    }
+    for (let i = 3; i <= n; i++) {
+        signature[i] = signature[i-1]+signature[i-2]+signature[i-3];
+    }
+
+    return signature;
+  }
+
+  //refactored tribonacci
+  function tribonacciI(signature,n){
+    for (let i = 0; i < n-3; i++) {
+        signature.push(signature[i]+signature[i+2]+signature[i+3]);
+    }
+
+    return signature.slice(0,n);
+  }
+  
+
+
+
+
+
+
+    
+
+
