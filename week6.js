@@ -43,3 +43,35 @@ function smallEnough(a, limit) {
     //else I return true
     return true;
 }
+
+//Given a string I reverse it and exclude none alphabetical characters
+function reverseLetter(str) {
+    //coding and coding..
+    //convert the string to an array
+    const strArr = str.split("");
+    //Take the string array and reverse it
+    const reverseStr = strArr.reverse();
+    //Use a regular expression to remove all the non alphabetic characters
+    const finalString = reverseStr.join("").replace(/[^a-zA-Z]/g, '');
+    //return the resulting strings
+    return finalString;
+
+}
+
+
+//Write a function which takes a string and returns the positions of capital letters in the string
+var capitals = function(word) {
+    // Write your code here
+    //create an array to store the positions of the capital letters
+    const indexArr = [];
+    //loop over the string
+    for (let i = 0; i < word.length; i++) {
+        //if a word is capital add it's index to the index array
+        if (word[i] === word[i].toUpperCase()) {
+            indexArr.push(i);
+        }
+    }
+
+    //return the index array
+    return indexArr;
+};
