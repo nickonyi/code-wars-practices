@@ -15,3 +15,20 @@ function calculateAge(a, b) {
     }
 
 }
+
+function isIsogram(str) {
+    //...
+    const strLowerCase = str.toLowerCase();
+
+    const count = {};
+    for (const ele of strLowerCase) {
+        if (count[ele]) {
+            return false;
+        } else {
+            count[ele] = 1;
+        }
+    }
+
+    return true;
+
+}
